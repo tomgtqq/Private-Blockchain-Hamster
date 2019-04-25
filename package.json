@@ -9,15 +9,17 @@
   "author": "tom",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
     "level": "^4.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomgtbst/nd1309-work-code.git"
+    "url": "git+https://github.com/tomgtbst/Private-Blockchain-Hamster.git"
   },
   "bugs": {
-    "url": "https://github.com/tomgtbst/nd1309-work-code/issues"
+    "url": "https://github.com/tomgtbst/Private-Blockchain-Hamster/issues"
   },
-  "homepage": "https://github.com/tomgtbst/nd1309-work-code#readme"
+  "homepage": "https://github.com/tomgtbst/Private-Blockchain-Hamster.git#readme"
 }

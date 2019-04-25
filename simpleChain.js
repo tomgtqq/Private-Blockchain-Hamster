@@ -23,7 +23,7 @@ setTimeout(function () {
 // 		myBlockChain.addBlock(blockTest).then((result) => {
 // 			console.log(result);
 // 			i++;
-// 			if (i < 10) theLoop(i);
+// 			if (i < 5) theLoop(i);
 // 		});
 // 	}, 10000);
 //   })(0);
@@ -34,9 +34,9 @@ setTimeout(function () {
  ***********************************************/
 
 
-	myBlockChain.getBlockChain().then((blockchain) => {
-		console.log(blockchain);
-	}).catch((err) => { console.log(err);});
+	// myBlockChain.getBlockChain().then((blockchain) => {
+	// 	console.log(blockchain);
+	// }).catch((err) => { console.log(err);});
 
 
 /***********************************************
