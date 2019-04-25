@@ -74,10 +74,13 @@ $ node app.js
 
 ```
  $ curl -X POST \
-   http://localhost:8000/block \
-   -d '{
-     "body":"Some data example"
- }'
+  http://localhost:8000/block\
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 1e551722-4382-49cc-84f1-19d3d433c1e7' \
+  -d '{
+    "body": "Testing block with test string data"
+}'
 
  ```
 
