@@ -72,6 +72,7 @@ class Blockchain {
                     // Block hash with SHA256 using newBlock and converting to a string 
                     obj.hash = SHA256(JSON.stringify(obj)).toString();
                     // converting newBlock data to value  
+                    // return self.bd.addLevelDBData(obj.height, JSON.stringify(obj));  // Adding block to chain
                     return self.bd.addLevelDBData(obj.height, JSON.stringify(obj).toString());  // Adding block to chain
                     })
                     .then((result) => {
@@ -96,6 +97,18 @@ class Blockchain {
             });
         })
     }
+
+    // Get Block By Hash
+        getBlockByHash(Hash) {
+            let self = this;
+            return new Promise(function(resolve, reject){
+                self.bd.getBlockByHash(Hash).then((block) => {
+                    resolve (block);
+                }).catch((err) => {
+                    reject(err);
+                });
+            })
+        }
 
     // Validate if Block is being tampered by Block Height
     validateBlock(height) {
@@ -152,18 +165,6 @@ class Blockchain {
             })
         })
     }
-
-    // Utility Method to Tamper a Block for Test Validation
-    // This method is for testing purpose
-    _modifyBlock(height, block) {
-        let self = this;
-        return new Promise( (resolve, reject) => {
-            self.bd.addLevelDBData(height, JSON.stringify(block).toString()).then((blockModified) => {
-                resolve(blockModified);
-            }).catch((err) => { console.log(err); reject(err)});
-        });
-    }
-   
 }
 
 module.exports.Blockchain = Blockchain;
