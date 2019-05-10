@@ -82,11 +82,11 @@ class BlockController {
         this.app.get("/api/blockchain", (req, res) => {
             this.blockchain.getBlockChain().then((blockchain) => {
                     if(blockchain){
-                        res.status(200).send(blockchain);
+                        return res.status(200).send(blockchain);
                     }else{
-                        res.status(404).send("Not Found");
+                        return res.status(404).send("Not Found");
                         }
-                }).catch((err) => { console.log(err);res.status(500).send(err);});
+                }).catch((err) => { console.log(err);return res.status(500).send(err);});
             })
         }
                              
@@ -112,14 +112,14 @@ class BlockController {
                                    }
                                 });
                                   if(blocks){
-                                    res.status(200).json(blocks);
+                                    return res.status(200).json(blocks);
                                   }else{
-                                    res.status(404).send("Not Found");
+                                    return res.status(404).send("Not Found");
                                   }
                             }else{
-                                  res.status(404).send("Not Found");
+                                    return res.status(404).send("Not Found");
                                   }
-                     }).catch((err) => { console.log(err);res.status(500).send(err);});
+                     }).catch((err) => { console.log(err);return res.status(500).send(err);});
                 }else{
                          return res.status(400).send("Please Check request parameters")
                      }
