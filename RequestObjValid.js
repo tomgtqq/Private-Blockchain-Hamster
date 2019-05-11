@@ -4,8 +4,8 @@
 
 class RequestObjValid {
     /**
-     * @param {Obj}  requestObj
-     * @param {boole signature} isValid
+     * @param {Object}  requestObj
+     * @param {Boolean} isValid - signature's status
      */
     constructor(requestObj, isValid){
         this.registerStar = true,

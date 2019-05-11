@@ -4,7 +4,7 @@
 
 const TimeoutRequestsWindowTime = 5*60*1000;
    /**
-     * @param {* walletAddress}  data 
+     * @param {*}  data - walletAddress
      */
 class RequestObj {
     constructor(data){

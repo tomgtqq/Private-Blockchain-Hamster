@@ -37,7 +37,6 @@ class BlockController {
                 this.blockchain.getBlock(height).then((block) => {
                     if (block){
                         let blockObj = JSON.parse(block);
-                        //blockObj.body.star.storyDecoded = new Buffer(blockObj.body.star.story, 'hex').toString();
                         blockObj.body.star.storyDecoded = hex2ascii(blockObj.body.star.story);
                         return res.status(200).json(blockObj);  // @cool utilize .send method to send data
                     } else {

@@ -69,7 +69,11 @@ class MempoolController {
         this.app.post("/message-signature/validate",(req, res)=>{
             if(req.body.address && req.body.signature){
                 this.mempool.validateRquestByWallet(req.body.address, req.body.signature).then((result)=>{
-                    return res.status(200).send(result);
+                    if(result){
+                        return res.status(200).send(result);
+                    }else{
+                        return res.status(400).send("Bad Request! Please Check your Address");
+                    }
                 }).catch((err) => {return res.status(500).send(err);})
             }else{
                 return  res.status(400).send("Please check body paramater");

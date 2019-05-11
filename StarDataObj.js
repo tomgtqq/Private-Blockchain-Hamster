@@ -3,8 +3,8 @@
 |  ==========================================================*/
 
    /**
-     * @param {* address}   walletAddress
-     * @param {* data}      starData
+     * @param {*}   walletAddress
+     * @param {Object}  starData - the data from client
      */ 
     
 class StarDataObj {
@@ -15,7 +15,7 @@ class StarDataObj {
             dec: starData.dec,
             mag: starData.mag,
             cen: starData.cen,
-            story: Buffer(starData.starStory).toString('hex')
+            story: new Buffer(starData.story ).toString('hex')
         }
     }
     checkStarDataValidity(){
