@@ -37,7 +37,7 @@ class BlockController {
                 this.blockchain.getBlock(height).then((block) => {
                     if (block){
                         let blockObj = JSON.parse(block);
-                        blockObj.body.star.storyDecoded = hex2ascii(blockObj.body.star.story);
+                        blockObj.body.star.storyDecoded = hex2ascii(blockObj.body.star.story);  //@Cool decode digital assets
                         return res.status(200).json(blockObj);  // @cool utilize .send method to send data
                     } else {
                         return res.status(404).send("Not Found");
@@ -54,7 +54,8 @@ class BlockController {
      * http://localhost:8000/stars/hash:[HASH]\
      */
     getStarBlockByHash() {
-        this.app.get("/stars/hash:value", (req, res) => {
+        this.app.get("/stars/hash::value", (req, res) => {
+            console.log(req.params.value);
             if(req.params.value){
                 let hash = req.params.value ; 
                 this.blockchain.getBlockByHash(hash).then((block) => {
@@ -98,7 +99,7 @@ class BlockController {
      * http://localhost:8000/stars/address:[ADDRESS] \
      */
     getBlocksByWalletAddress(){
-        this.app.get("/stars/address:value", (req, res) => {      
+        this.app.get("/stars/address::value", (req, res) => {      
             if(req.params.value){
                 let walletAddress = req.params.value;
                 let blocks = [];

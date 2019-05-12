@@ -15,7 +15,7 @@ class StarDataObj {
             dec: starData.dec,
             mag: starData.mag,
             cen: starData.cen,
-            story: new Buffer(starData.story ).toString('hex')
+            story: new Buffer(starData.story ).toString('hex') // @Cool encode digital assets
         }
     }
     checkStarDataValidity(){
